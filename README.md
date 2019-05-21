@@ -1,1 +1,2 @@
-# our_game
+# hello-world
+Hello world new project template.
