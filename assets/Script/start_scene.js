@@ -7,35 +7,11 @@
 // Learn life-cycle callbacks:
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
-import THREE from './three'
+
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        lautum1: {
-            default: null,
-            type: cc.MeshRenderer
-        },
-        lautum2: {
-            default: null,
-            type: cc.Button
-        },
-        textureRender: {
-            default: null,
-            type: cc.Texture2D
-        },
-        scene: {
-            default: null
-        },
-        camera: {
-            default: null
-        },
-        renderer: {
-            default: null
-        },
-        cube: {
-            default: null
-        }
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -55,14 +31,15 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad () {
-        this.createScene()
+    onLoad () {},
+
+    toYulin () {
+        cc.director.loadScene("test_scene")
+    },
+    toPic () {
+        cc.director.loadScene("pic_scene")
     },
 
-    createScene() {
-        this.scene = THREE.scene()
-        this.camera = THREE
-    },
     start () {
 
     },
