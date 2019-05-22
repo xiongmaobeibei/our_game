@@ -31,7 +31,14 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {},
+
+    toYulin () {
+        cc.director.loadScene("test_scene")
+    },
+    toPic () {
+        cc.director.loadScene("pic_scene")
+    },
 
     start () {
 
