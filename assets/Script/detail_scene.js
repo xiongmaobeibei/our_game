@@ -23,28 +23,38 @@ cc.Class({
         bg_dengmi: {
             default: null,
             type: cc.Sprite
+        },
+        inputMes: {
+            default: null,
+            type: cc.EditBox
         }
+        // commit_btn: {
+        //     default: null,
+        //     type: cc.Button
+        // },
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        // 移动灯谜位置
-        var dengmimoveTo = cc.moveTo(2,cc.p(582.822,270.178))
         // 移动背景图位置
-        var bg_imgmoveTo = cc.moveTo(2,cc.p(408.074,390.131))
-        // this.bg_dengmi.node.opacity = 0
+         var bg_imgmoveTo = cc.moveTo(2,cc.p(408.074,390.131))
+         this.bg_image.node.runAction(bg_imgmoveTo)
+        // 移动灯谜位置透明度
+        var dengmimoveTo = cc.moveTo(2,cc.p(582.822,270.178))
+        this.bg_dengmi.node.opacity = 0
+        var fadedeng = cc.fadeTo(0.2,200)
         this.bg_dengmi.node.runAction(dengmimoveTo)
-        this.bg_image.node.runAction(bg_imgmoveTo)
+        this.bg_dengmi.node.runAction(fadedeng)
 
         // 文字透明度展示
         this.text.node.opacity = 0
         var fadeTo = cc.fadeTo(0.2,200)
-        // this.text.node.runAction(fadeTo)
         var delayTime = cc.delayTime(1.8)
         var seq1 = cc.sequence([delayTime,fadeTo])
         this.text.node.runAction(seq1)
-        var dengmilits = [
+        this.inputMes.noderunAction(seq1)
+        this.dengmilits = [
             {
                 'question':'谜面：一声归去（打一北京地名）',
                 'answer': '故宫'
@@ -66,13 +76,23 @@ cc.Class({
                 'answer': '格格不入'
             },
         ]
-        var mychoice = com.choice - 1
-        this.text.string = '<color=#000000> ' + dengmilits[mychoice].question + ' </c>'
+        this.mychoice = com.choice - 1
+        this.text.string = '<color=#000000> ' + this.dengmilits[this.mychoice].question + ' </c>'
+        // this.commit_btn.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+        //     if(this.inputMes.string === dengmilits[mychoice].answer){
+        //         cc.director.loadScene("game_gugong_scene")
+        //     }
+        // })
     },
 
     start () {
 
     },
+    clickCommit () {
+        if(this.inputMes.string === this.dengmilits[this.mychoice].answer){
+            cc.director.loadScene("game_gugong")
+        }
+    }
 
     // update (dt) {},
 });

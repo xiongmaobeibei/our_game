@@ -303,7 +303,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "087cf88e-4460-43a2-8275-e19812ee8a05"
+      "__uuid__": "4e1dce8c-cabd-47ad-ac39-40d4789caadf"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -423,7 +423,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "灯笼",
+    "_name": "aaa",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -457,8 +457,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 198,
-      "height": 487
+      "width": 194,
+      "height": 486
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -726,9 +726,7 @@
     "_materials": [],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
+    "_spriteFrame": null,
     "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -831,24 +829,12 @@
       "b": 120,
       "a": 200
     },
-    "_N$normalSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "_N$pressedSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "pressedSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "_N$hoverSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "hoverSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "_N$disabledSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
+    "_N$normalSprite": null,
+    "_N$pressedSprite": null,
+    "pressedSprite": null,
+    "_N$hoverSprite": null,
+    "hoverSprite": null,
+    "_N$disabledSprite": null,
     "_N$target": {
       "__id__": 12
     },
@@ -872,6 +858,8 @@
       "__id__": 11
     },
     "_enabled": true,
+    "label": null,
+    "text": "Hello, World!",
     "_id": "d6iBFHkehNSLfHWZpZ3HDg"
   },
   {
@@ -1107,9 +1095,7 @@
     "_materials": [],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
+    "_spriteFrame": null,
     "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -1208,24 +1194,12 @@
       "b": 120,
       "a": 200
     },
-    "_N$normalSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "_N$pressedSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "pressedSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "_N$hoverSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "hoverSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "_N$disabledSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
+    "_N$normalSprite": null,
+    "_N$pressedSprite": null,
+    "pressedSprite": null,
+    "_N$hoverSprite": null,
+    "hoverSprite": null,
+    "_N$disabledSprite": null,
     "_N$target": {
       "__id__": 21
     },
@@ -1467,9 +1441,7 @@
     "_materials": [],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
+    "_spriteFrame": null,
     "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
@@ -1572,24 +1544,12 @@
       "b": 120,
       "a": 200
     },
-    "_N$normalSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "_N$pressedSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "pressedSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "_N$hoverSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "hoverSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
-    "_N$disabledSprite": {
-      "__uuid__": "0d940fff-613d-4e5b-883b-6406666547a4"
-    },
+    "_N$normalSprite": null,
+    "_N$pressedSprite": null,
+    "pressedSprite": null,
+    "_N$hoverSprite": null,
+    "hoverSprite": null,
+    "_N$disabledSprite": null,
     "_N$target": {
       "__id__": 28
     },
@@ -1602,7 +1562,7 @@
     },
     "component": "",
     "_componentId": "b95207mjJpEmav9ti+MsGcn",
-    "handler": "toYulin",
+    "handler": "toStart",
     "customEventData": ""
   },
   {
@@ -1613,6 +1573,8 @@
       "__id__": 27
     },
     "_enabled": true,
+    "label": null,
+    "text": "Hello, World!",
     "_id": "24DF1s1rdHyKyq9M3d7LyK"
   },
   {
@@ -1716,7 +1678,7 @@
     "_volume": 1,
     "_mute": false,
     "_loop": true,
-    "playOnLoad": true,
+    "playOnLoad": false,
     "preload": true,
     "_id": "1fm5xe5iRDlpCVB3AfMjzT"
   },
@@ -1745,6 +1707,8 @@
       "__id__": 2
     },
     "_enabled": true,
+    "label": null,
+    "text": "Hello, World!",
     "_id": "0brT8XBcBOmqjNirj7gIL9"
   }
 ]

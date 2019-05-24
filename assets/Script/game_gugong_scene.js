@@ -42,42 +42,53 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        this.light1.node.on('mousedown', function(e) {
+        // this.node.on('mousedown', function(e) {
+        //     var mynode = e.target
+        //     // var choode = mynode.getComponent(cc.Sprite)
+        //     if(mynode === this.light1.node) {
+        //         com.choice = 1
+        //         this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
+        //             function(){
+        //                 cc.director.loadScene("detail_scene")
+        //             })))
+        //     }
+        // },this)
+        this.light1.node.on(cc.Node.EventType.TOUCH_START, function(e) {
             com.choice = 1
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
-        this.light2.node.on('mousedown', function(e) {
+        this.light2.node.on(cc.Node.EventType.TOUCH_START, function(e) {
             com.choice = 2
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
-        this.light3.node.on('mousedown', function(e) {
+        this.light3.node.on(cc.Node.EventType.TOUCH_START, function(e) {
             com.choice = 3
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
-        this.light4.node.on('mousedown', function(e) {
+        this.light4.node.on(cc.Node.EventType.TOUCH_START, function(e) {
             com.choice = 4
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
-        this.light5.node.on('mousedown', function(e) {
+        this.light5.node.on(cc.Node.EventType.TOUCH_START, function(e) {
             com.choice = 5
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
-        this.light6.node.on('mousedown', function(e) {
+        this.light6.node.on(cc.Node.EventType.TOUCH_START, function(e) {
             com.choice = 6
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
