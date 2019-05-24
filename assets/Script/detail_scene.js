@@ -53,7 +53,13 @@ cc.Class({
         var delayTime = cc.delayTime(1.8)
         var seq1 = cc.sequence([delayTime,fadeTo])
         this.text.node.runAction(seq1)
-        this.inputMes.noderunAction(seq1)
+
+        // 输入框展示
+        this.inputMes.node.opacity = 0
+        var infadeTo = cc.fadeTo(0.2,200)
+        var indelayTime = cc.delayTime(1.8)
+        var seq2 = cc.sequence([indelayTime,infadeTo])
+        this.inputMes.node.runAction(seq2)
         this.dengmilits = [
             {
                 'question':'谜面：一声归去（打一北京地名）',
@@ -75,8 +81,12 @@ cc.Class({
                 'question':'紫薇徘徊皇宫外 （打一成语）',
                 'answer': '格格不入'
             },
+            {
+                'question':'紫薇徘徊皇宫外 （打一成语）',
+                'answer': '格格不入'
+            }
         ]
-        this.mychoice = com.choice - 1
+        this.mychoice = com.choice
         this.text.string = '<color=#000000> ' + this.dengmilits[this.mychoice].question + ' </c>'
         // this.commit_btn.node.on(cc.Node.EventType.TOUCH_START, function(e) {
         //     if(this.inputMes.string === dengmilits[mychoice].answer){
