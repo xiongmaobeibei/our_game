@@ -2,6 +2,38 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        light1: {
+            default: null,
+            type: cc.Sprite
+        },
+        light2: {
+            default: null,
+            type: cc.Sprite
+        },
+        light3: {
+            default: null,
+            type: cc.Sprite
+        },
+        light4: {
+            default: null,
+            type: cc.Sprite
+        },
+        light5: {
+            default: null,
+            type: cc.Sprite
+        },
+        light6: {
+            default: null,
+            type: cc.Sprite
+        },
+        light7: {
+            default: null,
+            type: cc.Sprite
+        },
+        light8: {
+            default: null,
+            type: cc.Sprite
+        }
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -15,6 +47,57 @@ cc.Class({
         this.node.parent.on(cc.Node.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
         
         this.cards = this.node._children
+
+        // 灯笼触摸事件
+        this.light1.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
+                function(){
+                    cc.director.loadScene("detail_scene")
+                })))
+        },this)
+        this.light2.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
+                function(){
+                    cc.director.loadScene("detail_scene")
+                })))
+        },this)
+        this.light3.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
+                function(){
+                    cc.director.loadScene("detail_scene")
+                })))
+        },this)
+        this.light4.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
+                function(){
+                    cc.director.loadScene("detail_scene")
+                })))
+        },this)
+        this.light5.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
+                function(){
+                    cc.director.loadScene("detail_scene")
+                })))
+        },this)
+        this.light6.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
+                function(){
+                    cc.director.loadScene("detail_scene")
+                })))
+        },this)
+        this.light7.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
+                function(){
+                    cc.director.loadScene("detail_scene")
+                })))
+        },this)
+        this.light8.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
+                function(){
+                    cc.director.loadScene("detail_scene")
+                })))
+        },this)
+
 
         for(this.i = 1;this.i<=9;this.i++){
             // console.log(this.i)
@@ -90,6 +173,9 @@ cc.Class({
 
     start () {
     },
+    return_back () {
+        cc.director.loadScene("game_start")
+    }
 
     // update (dt) {},
 });

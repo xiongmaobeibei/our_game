@@ -36,6 +36,9 @@ cc.Class({
     start () {
 
     },
+    return_back () {
+        cc.director.loadScene("game_start")
+    }
 
     // update (dt) {},
 });
