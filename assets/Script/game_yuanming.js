@@ -1,3 +1,4 @@
+var com = require('./Global')
 cc.Class({
     extends: cc.Component,
 
@@ -39,94 +40,70 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        this.nodePos = this.node.getPosition();
-        //触摸监听(this.node.parent是屏幕)
-        //想达到按住节点，节点才能移动的效果，将监听函数注册到 this.node 上，去掉  .parent 即可
-        this.node.parent.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
-        this.node.parent.on(cc.Node.EventType.TOUCH_END, this.onTouchEnd, this);
-        this.node.parent.on(cc.Node.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
-        
-        this.cards = this.node._children
-
         // 灯笼触摸事件
         this.light1.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            com.choice1 = 1
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
         this.light2.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            com.choice1 = 2
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
         this.light3.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            com.choice1 = 3
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
         this.light4.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            com.choice1 = 4
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
         this.light5.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            com.choice1 = 5
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
         this.light6.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            com.choice1 = 6
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
         this.light7.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            com.choice1 = 7
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
         this.light8.node.on(cc.Node.EventType.TOUCH_START, function(e) {
+            com.choice1 = 8
             this.node.runAction(cc.sequence(cc.fadeOut(1.0),cc.callFunc(
                 function(){
                     cc.director.loadScene("detail_scene")
                 })))
         },this)
-
-
-        for(this.i = 1;this.i<=9;this.i++){
-            // console.log(this.i)
-            // console.log(this.cards[1])
-            // this.cards[this.i].on(cc.Node.EventType.TOUCH_START, function (event) {
-            //     // console.log("1")
-            // });
-        }
-        // console.log(this.node)
-        // while(this.x+this.i*80<340) {
-        //     var node = new cc.Node('Sprite');
-        //     var sp = node.addComponent(cc.Sprite);
         
-        //     sp.spriteFrame = this.sprite;
-            
-        //     node.parent = this.node;
-        //     // var self = this.btn;
-        //     // console.log(this.node.children);
-        //     node.x = this.x+this.i*80;
-        //     node.y = this.y;
-        //     node.width = this.width
-        //     node.height = this.height
-        //     cc.loader.loadRes("test assets/light1", cc.SpriteFrame, function (err, spriteFrame) {
-        //         node.getComponent(cc.Sprite).spriteFrame = spriteFrame;
-        //         console.log(node.getComponent(cc.Sprite).node)
-        //     });
-        //     // console.log(node)
-        //     this.i++;
-        // }
+        this.nodePos = this.node.getPosition();
+        //触摸监听(this.node.parent是屏幕)
+        //想达到按住节点，节点才能移动的效果，将监听函数注册到 this.node 上，去掉  .parent 即可
+        this.node.parent.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this)
+        this.node.parent.on(cc.Node.EventType.TOUCH_END, this.onTouchEnd, this)
+        this.node.parent.on(cc.Node.EventType.TOUCH_CANCEL, this.onTouchCancel, this)
     },
     onTouchMove (event) {
         var self = this;

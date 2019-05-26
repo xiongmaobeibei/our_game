@@ -28,24 +28,25 @@ cc.Class({
             default: null,
             type: cc.EditBox
         }
-        // commit_btn: {
-        //     default: null,
-        //     type: cc.Button
-        // },
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
         // 移动背景图位置
-         var bg_imgmoveTo = cc.moveTo(2,cc.p(408.074,390.131))
+         var bg_imgmoveTo = cc.moveTo(2,cc.p(-278.14,70.131))
          this.bg_image.node.runAction(bg_imgmoveTo)
         // 移动灯谜位置透明度
-        var dengmimoveTo = cc.moveTo(2,cc.p(582.822,270.178))
+        var dengmimoveTo = cc.moveTo(2,cc.p(122.365,-49.822))
         this.bg_dengmi.node.opacity = 0
         var fadedeng = cc.fadeTo(0.2,200)
         this.bg_dengmi.node.runAction(dengmimoveTo)
         this.bg_dengmi.node.runAction(fadedeng)
+
+        // 提示框
+        // this.alertNode.node.opacity = 0
+        // var dis = cc.fadeTo(0.2, 200)
+        // this.alertNode.node.runAction(dis)
 
         // 文字透明度展示
         this.text.node.opacity = 0
@@ -86,7 +87,7 @@ cc.Class({
                         'answer': '格格不入'
                     },
                     {
-                        'question':'谜面：汉家宫殿入云端 （打一现代人名）',
+                        'question':'谜面：汉家宫殿入云端<br/> （打一现代人名）',
                         'answer': '高君宇'
                     }
                 ]
@@ -94,7 +95,7 @@ cc.Class({
             case 2:
                 this.dengmilits = [
                     {
-                        'question':'谜面：十五的月亮悬庭前（打一北京地名)',
+                        'question':'谜面：十五的月亮悬庭前<br/>（打一北京地名)',
                         'answer': '圆明园'
                     },
                     {
@@ -141,16 +142,16 @@ cc.Class({
                         'tip': '“所”别解为“住所”，“难”别解为“灾难”'
                     },
                     {
-                        'question':'谜面：长安一片月 （打一重庆名胜）',
+                        'question':'谜面：长安一片月<br/> （打一重庆名胜）',
                         'answer': '白帝城'
                     },
                     {
-                        'question':'谜面：春城无处不飞花 （打一俗语，四字）',
+                        'question':'谜面：春城无处不飞花<br/> （打一俗语，四字）',
                         'answer': '谢天谢地',
                         'tip': '谜面出自唐诗《寒食》，原文为“春城无处不飞花，寒食东风御柳斜。日暮汉宫传蜡烛，轻烟散入五侯家。”前两句写的是白昼风光，描写了整个长安柳絮飞舞，落红无数的迷人春景和皇宫园林中的风光；后两句则是写夜晚景象，生动地画出了一幅夜晚走马传烛图，使人如见蜡烛之光'
                     },
                     {
-                        'question':'谜面：夕贬潮阳路八千（打西厢记一句）',
+                        'question':'谜面：夕贬潮阳路八千<br/>（打西厢记一句）',
                         'answer': '日近长安远'
                     },
                     {
@@ -177,13 +178,13 @@ cc.Class({
                         'tip': '长安一片月，万户捣衣声。秋风吹不尽，总是玉关情。何日平胡虏，良人罢远征。--李白《子夜吴歌·秋歌》'                                                                                                                         
                     },
                     {
-                        'question':'谜面：永保太平吾心愿 （打一古代著作）',
+                        'question':'谜面：永保太平吾心愿<br/>（打一古代著作）',
                         'answer': '长安志'
                     }
                 ]
                 break
         }
-        this.mychoice = com.choice1
+        this.mychoice = com.choice1 -1
         this.text.string = '<color=#000000> ' + this.dengmilits[this.mychoice].question + ' </c>'
         // this.commit_btn.node.on(cc.Node.EventType.TOUCH_START, function(e) {
         //     if(this.inputMes.string === dengmilits[mychoice].answer){
@@ -191,13 +192,21 @@ cc.Class({
         //     }
         // })
     },
-
-    start () {
-
-    },
     clickCommit () {
         if(this.inputMes.string === this.dengmilits[this.mychoice].answer){
+            com.score += 1
             cc.director.loadScene("game_gugong")
+        }else{
+            // let alert = require('alert.js')
+            // //弹窗调用
+            // alert.show.call(this, "答案错了请重输！", "确认", function (type) {
+            //     if (type == "取消") {
+            //         console.log("取消");
+            //     }
+            //     if (type == "确认") {
+            //         console.log("确认");
+            //     }
+            // })
         }
     },
     return_back () {
@@ -213,6 +222,4 @@ cc.Class({
         }
         
     }
-
-    // update (dt) {},
 });

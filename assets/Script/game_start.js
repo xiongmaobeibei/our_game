@@ -23,7 +23,9 @@ cc.Class({
     toChangan: function () {
         com.chooseIndex = 3
         cc.director.loadScene("game_changan")
+    },
+    return_back () {
+        cc.director.loadScene("start_scene")
     }
-
     // update (dt) {},
 });
